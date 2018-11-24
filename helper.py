@@ -117,7 +117,7 @@ def train_model(model, trainloader, testloader, criterion, optimizer, epochs=5, 
                 
                 # Turn off the autograd to improve the performance
                 with torch.no_grad():
-                    test_loss, accuracy = validate_model(model, testloader, criterion, device, True)
+                    test_loss, accuracy = validate_model(model, testloader, criterion, device, isTransfer)
                 
                 print("Device: {}.. ".format(device),
                       "Epoch: {}/{}.. ".format(e+1, epochs),
